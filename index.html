@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>En memoria de Genaro De Paz · 10.07.2026</title>
+<style>
+:root{--cream:#FAF8F3;--warm:#F2EDE4;--border:#DDD8CE;--text:#1C1A17;--muted:#6B6560;--accent:#7A5C3E;--accent-bg:#F0E8DE;--gold:#B8955A;--white:#FFFFFF;--green:#4A6741;--blue:#3A5878}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);font-family:Georgia,'Times New Roman',serif;color:var(--text);min-height:100vh}
+
+header{background:var(--white);border-bottom:1px solid var(--border);padding:20px 16px 0;text-align:center;position:sticky;top:0;z-index:100}
+.h-title{font-size:11px;font-family:-apple-system,sans-serif;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:6px}
+.h-name{font-size:22px;font-weight:normal;color:var(--accent);margin-bottom:2px}
+.h-dates{font-size:13px;color:var(--muted);font-family:-apple-system,sans-serif;margin-bottom:12px}
+
+.lang-bar{display:flex;border-top:1px solid var(--border)}
+.lb{flex:1;padding:9px 4px;background:none;border:none;border-right:1px solid var(--border);font-family:-apple-system,sans-serif;font-size:13px;color:var(--muted);cursor:pointer;letter-spacing:.03em}
+.lb:last-child{border-right:none}
+.lb.on{color:var(--accent);font-weight:600;background:var(--accent-bg)}
+
+.section-label{font-family:-apple-system,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:14px 16px 6px;border-bottom:0.5px solid var(--border)}
+
+.item{border-bottom:1px solid var(--border);background:var(--white)}
+.item-head{display:flex;align-items:flex-start;gap:10px;padding:13px 16px;cursor:pointer}
+.bullet{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:46px;padding-top:2px}
+.time-tag{font-family:-apple-system,sans-serif;font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.05em}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.d-song{background:var(--gold)}
+.d-read{background:var(--green)}
+.d-eul{background:var(--blue)}
+.d-lit{background:#8B7355}
+.d-move{background:var(--muted)}
+.meta{flex:1;min-width:0}
+.item-title{font-size:15px;color:var(--text);line-height:1.4}
+.item-sub{font-size:12px;font-family:-apple-system,sans-serif;color:var(--muted);margin-top:2px}
+.ch{color:var(--muted);font-size:18px;font-family:-apple-system,sans-serif;font-weight:300;margin-top:1px;transition:transform .2s;flex-shrink:0}
+.ch.op{transform:rotate(180deg)}
+
+.item-body{display:none;padding:0 16px 14px 72px}
+.item-body.op{display:block}
+
+.passage{background:var(--cream);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;margin-bottom:8px}
+.p-ref{font-family:-apple-system,sans-serif;font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}
+.p-text{font-size:14px;line-height:1.85;color:var(--text)}
+
+.eulogy-block{background:var(--warm);border-radius:8px;padding:12px 14px;margin-bottom:8px}
+.eul-name{font-family:-apple-system,sans-serif;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.eul-text{font-size:13.5px;line-height:1.85;color:var(--text)}
+.eul-placeholder{font-size:13px;color:var(--muted);font-style:italic;line-height:1.6}
+
+.pill{display:inline-block;background:var(--accent-bg);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-family:-apple-system,sans-serif;font-size:12px;color:var(--accent);margin:0 4px 6px 0}
+.note{font-family:-apple-system,sans-serif;font-size:13px;color:var(--muted);line-height:1.6}
+
+
+body[lang=es] [data-l~="es"]{display:block}
+body[lang=de] [data-l="de"]{display:block}
+body[lang=en] [data-l="en"]{display:block}
+body[lang=uk] [data-l="uk"]{display:block}
+.h-quote{font-size:13px;color:var(--muted);font-style:italic;font-family:Georgia,serif;line-height:1.6;padding:10px 16px 14px}.h-quote{border-top:0.5px solid var(--border);margin-top:8px}
+.spotify-btn{display:inline-flex;align-items:center;gap:6px;margin:0 0 14px;padding:6px 14px;background:none;border:1px solid var(--border);border-radius:999px;color:var(--muted);text-decoration:none;font-family:-apple-system,sans-serif;font-size:12px;letter-spacing:.02em;-webkit-tap-highlight-color:transparent;min-height:36px}
+.spotify-btn:active{background:var(--warm)}
+.spotify-btn span{display:none}
+.bullet{display:flex;align-items:center;justify-content:center;min-width:20px;padding-top:4px}
+
+[data-l]{display:none}
+body[data-lang=es] [data-l=es]{display:block}
+body[data-lang=de] [data-l=de]{display:block}
+body[data-lang=en] [data-l=en]{display:block}
+body[data-lang=uk] [data-l=uk]{display:block}
+body[data-lang=es] span[data-l=es]{display:inline}
+body[data-lang=de] span[data-l=de]{display:inline}
+body[data-lang=en] span[data-l=en]{display:inline}
+body[data-lang=uk] span[data-l=uk]{display:inline}
+</style>
+</head>
+<body data-lang="es">
+
+<header>
+  <div class="h-title" data-l="es">En memoria de</div>
+  <div class="h-title" data-l="de">Im Gedenken an</div>
+  <div class="h-title" data-l="en">In memory of</div>
+  <div class="h-title" data-l="uk">На спомин про</div>
+  <div class="h-name">Genaro De Paz</div>
+  <div class="h-dates">19.09.1954 &mdash; 26.04.2026</div>
+  <div class="h-quote" data-l="es">"Estás y estarás siempre en nosotros. Eres un ejemplo de cómo salir adelante, y te amamos por eso."</div>
+  <div class="h-quote" data-l="de">„Du bist und wirst immer in uns sein. Du bist ein Beispiel dafür, wie man vorwärtskommt, und wir lieben dich dafür."</div>
+  <div class="h-quote" data-l="en">"You are and will always be within us. You are an example of how to move forward, and we love you for it."</div>
+  <div class="h-quote" data-l="uk">«Ти є і завжди будеш у нас. Ти приклад того, як рухатися вперед, і ми любимо тебе за це.»</div>
+  <div style="padding:4px 0 0;border-top:0.5px solid var(--border);margin-top:2px;text-align:center">
+  <a class="spotify-btn" href="https://open.spotify.com/playlist/1GQ04QSO3vBMZ1AExj1d2G?si=022f4b74789f4528" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+    <span data-l="es">Playlist de papá</span>
+    <span data-l="de">Papas Playlist</span>
+    <span data-l="en">Dad's playlist</span>
+    <span data-l="uk">Плейлист тата</span>
+  </a>
+  </div>
+  <div class="lang-bar">
+    <button class="lb on" onclick="sl('es')">Español</button>
+    <button class="lb" onclick="sl('de')">Deutsch</button>
+    <button class="lb" onclick="sl('en')">English</button>
+    <button class="lb" onclick="sl('uk')">Українська</button>
+  </div>
+</header>
+
+<!-- PRIMER PARTE -->
+<div class="section-label" data-l="es">Primer parte &mdash; Iglesia · 13:00 h</div>
+<div class="section-label" data-l="de">Erster Teil &mdash; Kirche · 13:00 Uhr</div>
+<div class="section-label" data-l="en">First part &mdash; Church · 13:00</div>
+<div class="section-label" data-l="uk">Перша частина &mdash; Церква · 13:00</div>
+
+<!-- Canción apertura -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-song" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Canción de apertura</div>
+    <div data-l="de" class="item-title">Eröffnungslied</div>
+    <div data-l="en" class="item-title">Opening song</div>
+    <div data-l="uk" class="item-title">Пісня на початку</div>
+    <div data-l="es" class="item-sub">Yo Quiero Ser un Triunfador · Los Iracundos</div>
+    <div data-l="de" class="item-sub">Yo Quiero Ser un Triunfador · Los Iracundos</div>
+    <div data-l="en" class="item-sub">Yo Quiero Ser un Triunfador · Los Iracundos</div>
+    <div data-l="uk" class="item-sub">Yo Quiero Ser un Triunfador · Los Iracundos</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><p class="note">Canción de papá · Los Iracundos · Speaker Bluetooth.</p><br><a href="https://www.letras.com/los-iracundos/el-triunfador/" target="_blank">Ver letra completa →</a></div>
+  <div data-l="de"><p class="note">Papas Lied · Los Iracundos · Bluetooth-Lautsprecher.</p><br><a href="https://www.letras.com/los-iracundos/el-triunfador/" target="_blank">Liedtext ansehen →</a></div>
+  <div data-l="en"><p class="note">Dad's song · Los Iracundos · Bluetooth speaker.</p><br><a href="https://www.letras.com/los-iracundos/el-triunfador/" target="_blank">View full lyrics →</a></div>
+  <div data-l="uk"><p class="note">Пісня тата · Los Iracundos · Bluetooth-колонка.</p><br><a href="https://www.letras.com/los-iracundos/el-triunfador/" target="_blank">Переглянути текст →</a></div>
+</div></div>
+
+<!-- Palabras celebrante -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-move" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Palabras del padre celebrante</div>
+    <div data-l="de" class="item-title">Willkommensworte des Pfarrers</div>
+    <div data-l="en" class="item-title">Opening words — priest</div>
+    <div data-l="uk" class="item-title">Вступне слово священика</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><p class="note">El padre da la bienvenida y abre la misa. Palabras sobre quién fue Genaro De Paz.</p></div>
+  <div data-l="de"><p class="note">Der Pfarrer eröffnet die Trauerfeier mit Willkommensworten und Gedanken darüber, wer Genaro De Paz war.</p></div>
+  <div data-l="en"><p class="note">The priest welcomes everyone and opens the ceremony with reflections on who Genaro De Paz was.</p></div>
+  <div data-l="uk"><p class="note">Священик вітає присутніх і розпочинає церемонію словами про Генаро Де Пас.</p></div>
+</div></div>
+
+<!-- Lectura 1 Emilio -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-read" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Primera lectura &mdash; Emilio</div>
+    <div data-l="de" class="item-title">Erste Lesung &mdash; Emilio</div>
+    <div data-l="en" class="item-title">First reading &mdash; Emilio</div>
+    <div data-l="uk" class="item-title">Перше читання &mdash; Емілío</div>
+    <div data-l="es" class="item-sub">Sabiduría 3, 1-9</div>
+    <div data-l="de" class="item-sub">Weisheit 3, 1-9</div>
+    <div data-l="en" class="item-sub">Wisdom 3:1-9</div>
+    <div data-l="uk" class="item-sub">Мудрість 3, 1-9</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><div class="passage"><div class="p-ref">Sabiduría 3, 1-9</div><p class="p-text">Las almas de los justos están en manos de Dios, y no los alcanzará tormento alguno. A los ojos de los insensatos, parecían haber muerto, su salida de este mundo se tenía por una desgracia, y su separación de nosotros, por una destrucción total; pero ellos están en paz. Aunque a los ojos de los hombres sufrieron castigos, su esperanza estaba llena de inmortalidad. Después de breves sufrimientos, recibirán una gran recompensa, porque Dios los puso a prueba y los halló dignos de él. Los probó como el oro en el crisol y los aceptó como una ofrenda agradable. Los que confían en él comprenderán la verdad, y los que le son fieles permanecerán junto a él en el amor, porque la gracia y la misericordia son para sus elegidos.</p></div></div>
+  <div data-l="de"><div class="passage"><div class="p-ref">Weisheit 3, 1-9</div><p class="p-text">Die Seelen der Gerechten sind in Gottes Hand und keine Qual kann sie berühren. In den Augen der Toren ist es ein Unglück, dass sie starben, ihr Hinscheiden wurde als Vernichtung gedeutet; sie aber sind in Frieden. Vor den Menschen schien es, sie würden gestraft, doch ihre Hoffnung ist voll Unsterblichkeit. Nach kurzer Züchtigung wird ihnen Großes an Gutem zuteil; denn Gott hat sie geprüft und für würdig befunden. Wie Gold im Schmelzofen hat er sie geprüft und wie ein Opfer auf dem Altar hat er sie angenommen. Alle, die ihm vertrauen, werden die Wahrheit verstehen, alle, die ihm treu sind, werden bei ihm bleiben in Liebe; denn Gnade und Erbarmen werden seinen Erwählten zuteil.</p></div></div>
+  <div data-l="en"><div class="passage"><div class="p-ref">Wisdom 3:1-9</div><p class="p-text">The souls of the just are in the hand of God, and no torment shall touch them. They seemed, in the view of the foolish, to be dead; and their passing away was thought an affliction and their going forth from us, utter destruction. But they are in peace. For if before men, indeed they be punished, yet is their hope full of immortality. Chastised a little, they shall be greatly blessed, because God tried them and found them worthy of himself. As gold in the furnace, he proved them, and as sacrificial offerings he took them to himself. Those who trust in him shall understand truth, and the faithful shall abide with him in love, because grace and mercy are with his holy ones.</p></div></div>
+  <div data-l="uk"><div class="passage"><div class="p-ref">Мудрість 3, 1-9</div><p class="p-text">Душі праведників у руці Божій, і мука не торкнеться їх. В очах нерозумних вони здаються померлими, і відхід їхній вважається нещастям, і відбуття від нас — знищенням; але вони перебувають у мирі. Бо хоч перед людьми вони й зазнали мук, надія їхня повна безсмертя. Трохи покарані, вони будуть щедро винагороджені, бо Бог випробував їх і знайшов їх гідними Себе. Як золото в горнилі, Він їх випробував і прийняв як жертву всепалення. У час відвідин вони засяють і, як іскри по стерні, розбіжаться. Ті, хто довіряє Йому, зрозуміють істину, і вірні в любові перебуватимуть при Ньому.</p></div></div>
+</div></div>
+
+<!-- Lectura 2 Rosa -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-read" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Segunda lectura &mdash; Rosa</div>
+    <div data-l="de" class="item-title">Zweite Lesung &mdash; Rosa</div>
+    <div data-l="en" class="item-title">Second reading &mdash; Rosa</div>
+    <div data-l="uk" class="item-title">Друге читання &mdash; Роса</div>
+    <div data-l="es" class="item-sub">Salmo 23, 1-6</div>
+    <div data-l="de" class="item-sub">Psalm 23, 1-6</div>
+    <div data-l="en" class="item-sub">Psalm 23:1-6</div>
+    <div data-l="uk" class="item-sub">Псалом 23, 1-6</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><div class="passage"><div class="p-ref">Salmo 23, 1-6</div><p class="p-text">El Señor es mi pastor, nada me falta. En verdes praderas me hace descansar, junto a aguas tranquilas me conduce y repara mis fuerzas. Me guía por sendas de justicia, por amor de su nombre. Aunque camine por el valle oscuro de la muerte, no temeré ningún mal, porque tú estás conmigo; tu vara y tu cayado me dan confianza. Tú preparas una mesa ante mí, frente a mis adversarios; unges con perfume mi cabeza, y mi copa rebosa. Tu bondad y tu misericordia me acompañarán todos los días de mi vida, y habitaré en la casa del Señor por años sin término.</p></div></div>
+  <div data-l="de"><div class="passage"><div class="p-ref">Psalm 23, 1-6</div><p class="p-text">Der Herr ist mein Hirt, nichts wird mir fehlen. Er lässt mich lagern auf grünen Auen und führt mich zum Ruheplatz am Wasser. Er stillt mein Verlangen, er leitet mich auf rechten Pfaden, treu seinem Namen. Auch wenn ich gehe im finsteren Tal, ich fürchte kein Unheil; denn du bist bei mir, dein Stock und dein Stab geben mir Zuversicht. Du deckst mir den Tisch vor den Augen meiner Feinde, du salbst mein Haupt mit Öl, du füllst mir reichlich den Becher. Güte und Huld werden mir folgen mein Leben lang, und im Haus des Herrn darf ich wohnen für lange Zeit.</p></div></div>
+  <div data-l="en"><div class="passage"><div class="p-ref">Psalm 23:1-6</div><p class="p-text">The Lord is my shepherd; I shall not want. He makes me lie down in green pastures; he leads me beside still waters; he restores my soul. He leads me in right paths for his name's sake. Even though I walk through the darkest valley, I fear no evil; for you are with me; your rod and your staff — they comfort me. You prepare a table before me in the presence of my enemies; you anoint my head with oil; my cup overflows. Surely goodness and mercy shall follow me all the days of my life, and I shall dwell in the house of the Lord my whole life long.</p></div></div>
+  <div data-l="uk"><div class="passage"><div class="p-ref">Псалом 23, 1-6</div><p class="p-text">Господь — мій пастир, ні в чому не матиму нестачі. Він укладає мене на зелених пасовищах, веде мене до тихих вод, підкріплює душу мою. Він провадить мене стежками праведності заради Свого імені. Хоч і піду долиною смертної тіні, не злякаюся лиха, бо Ти зі мною; Твій жезл і Твій посох — вони заспокоюють мене. Ти готуєш для мене стіл перед моїми ворогами; Ти помазуєш голову мою єлеєм; чаша моя переповнена. Тільки добро і милість супроводжуватимуть мене всі дні мого життя, і я оселюся в домі Господньому на довгі роки.</p></div></div>
+</div></div>
+
+<!-- Lectura 3 Carlos -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-read" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Tercera lectura &mdash; Carlos</div>
+    <div data-l="de" class="item-title">Dritte Lesung &mdash; Carlos</div>
+    <div data-l="en" class="item-title">Third reading &mdash; Carlos</div>
+    <div data-l="uk" class="item-title">Третє читання &mdash; Карлос</div>
+    <div data-l="es" class="item-sub">Juan 14, 1-6</div>
+    <div data-l="de" class="item-sub">Johannes 14, 1-6</div>
+    <div data-l="en" class="item-sub">John 14:1-6</div>
+    <div data-l="uk" class="item-sub">Від Івана 14, 1-6</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><div class="passage"><div class="p-ref">Juan 14, 1-6</div><p class="p-text">No se turbe vuestro corazón. Creéis en Dios; creed también en mí. En la casa de mi Padre hay muchas moradas; si no fuera así, os lo habría dicho, porque voy a prepararos un lugar. Y cuando haya ido y os haya preparado un lugar, volveré y os llevaré conmigo, para que donde yo esté, estéis también vosotros. Y conocéis el camino adonde voy. Le dijo Tomás: Señor, no sabemos adónde vas; ¿cómo podemos conocer el camino? Jesús le dijo: Yo soy el camino, la verdad y la vida; nadie va al Padre sino por mí.</p></div></div>
+  <div data-l="de"><div class="passage"><div class="p-ref">Johannes 14, 1-6</div><p class="p-text">Euer Herz lasse sich nicht verwirren. Glaubt an Gott und glaubt an mich! Im Haus meines Vaters gibt es viele Wohnungen. Wenn es nicht so wäre, hätte ich euch dann gesagt: Ich gehe, um einen Platz für euch vorzubereiten? Wenn ich gegangen bin und einen Platz für euch vorbereitet habe, komme ich wieder und werde euch zu mir holen, damit auch ihr dort seid, wo ich bin. Thomas sagte zu ihm: Herr, wir wissen nicht, wohin du gehst. Wie können wir den Weg kennen? Jesus sagte zu ihm: Ich bin der Weg und die Wahrheit und das Leben; niemand kommt zum Vater außer durch mich.</p></div></div>
+  <div data-l="en"><div class="passage"><div class="p-ref">John 14:1-6</div><p class="p-text">Do not let your hearts be troubled. Believe in God, believe also in me. In my Father's house there are many dwelling places. If I go and prepare a place for you, I will come again and will take you to myself, so that where I am, there you may be also. Thomas said to him, Lord, we do not know where you are going. How can we know the way? Jesus said to him, I am the way, and the truth, and the life. No one comes to the Father except through me.</p></div></div>
+  <div data-l="uk"><div class="passage"><div class="p-ref">Від Івана 14, 1-6</div><p class="p-text">Нехай не тривожиться серце ваше. Вірте в Бога і в Мене вірте. У домі Отця Мого є багато оселей. Якби не так, то Я сказав би вам, бо Я іду приготувати вам місце. І коли піду та приготую вам місце, прийду знову і візьму вас до Себе, щоб і ви були там, де Я. Хома сказав Йому: Господи, ми не знаємо, куди Ти йдеш; як же ми можемо знати шлях? Ісус відповів: Я є путь, і правда, і життя. Ніхто не приходить до Отця, як тільки через Мене.</p></div></div>
+</div></div>
+
+<!-- Canto litúrgico -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-lit" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Canto litúrgico</div>
+    <div data-l="de" class="item-title">Kirchenlied</div>
+    <div data-l="en" class="item-title">Liturgical song</div>
+    <div data-l="uk" class="item-title">Літургійний спів</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><span class="pill">En el nombre del Señor — Guillermo Cuéllar</span><span class="pill">Gotteslob Nr. 612</span></div>
+  <div data-l="de"><span class="pill">En el nombre del Señor (Spanisch)</span><span class="pill">Herr, du hast mein Flehn vernommen — Gotteslob 612</span></div>
+  <div data-l="en"><span class="pill">En el nombre del Señor (Spanish)</span><span class="pill">Gotteslob 612 (German)</span></div>
+  <div data-l="uk"><span class="pill">En el nombre del Señor (іспанська)</span><span class="pill">Gotteslob 612 (німецька)</span></div>
+</div></div>
+
+<!-- Vuela Alto -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-song" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Tercera canción de papá</div>
+    <div data-l="de" class="item-title">Drittes Lied von Papa</div>
+    <div data-l="en" class="item-title">Father's third song</div>
+    <div data-l="uk" class="item-title">Третя пісня тата</div>
+    <div data-l="es" class="item-sub">Vuela Alto · Julio Iglesias</div>
+    <div data-l="de" class="item-sub">Vuela Alto · Julio Iglesias</div>
+    <div data-l="en" class="item-sub">Vuela Alto · Julio Iglesias</div>
+    <div data-l="uk" class="item-sub">Vuela Alto · Julio Iglesias</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><p class="note">Canción de papá · Julio Iglesias · Speaker Bluetooth.</p><br><a href="https://www.letras.com/julio-iglesias/546206/" target="_blank">Ver letra completa →</a></div>
+  <div data-l="de"><p class="note">Papas Lied · Julio Iglesias · Bluetooth-Lautsprecher.</p><br><a href="https://www.letras.com/julio-iglesias/546206/" target="_blank">Liedtext ansehen →</a></div>
+  <div data-l="en"><p class="note">Dad's song · Julio Iglesias · Bluetooth speaker.</p><br><a href="https://www.letras.com/julio-iglesias/546206/" target="_blank">View full lyrics →</a></div>
+  <div data-l="uk"><p class="note">Пісня тата · Julio Iglesias · Bluetooth-колонка.</p><br><a href="https://www.letras.com/julio-iglesias/546206/" target="_blank">Переглянути текст →</a></div>
+</div></div>
+
+<!-- SEGUNDO PARTE -->
+<div class="section-label" data-l="es">Segundo parte &mdash; Eulogias</div>
+<div class="section-label" data-l="de">Zweiter Teil &mdash; Eulogien</div>
+<div class="section-label" data-l="en">Second part &mdash; Eulogies</div>
+<div class="section-label" data-l="uk">Друга частина &mdash; Прощальні слова</div>
+
+<!-- Eulogia Emilio -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-eul" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Palabras de Emilio</div>
+    <div data-l="de" class="item-title">Worte von Emilio</div>
+    <div data-l="en" class="item-title">Words from Emilio</div>
+    <div data-l="uk" class="item-title">Слова Еміліо</div>
+    <div data-l="es" class="item-sub">Hijo</div>
+    <div data-l="de" class="item-sub">Sohn</div>
+    <div data-l="en" class="item-sub">Son</div>
+    <div data-l="uk" class="item-sub">Син</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><div class="eulogy-block"><div class="eul-name">Emilio De Paz Castillo</div><p class="eul-text">Mi amado papito,<br><br>Quiero que sepas que eres y serás siempre mi mejor amigo. Creo que la ilusión más grande que puede tener un hijo es tener a su padre como ejemplo, como brújula que orienta el destino.<br><br>Es por ti que hago tantas bromas, que tengo una mente tan curiosa, con tanta imaginación, con tanto amor. Sé que siempre estabas orgulloso de mí y de mis hermanos, de tus nueras, de tus nietos — no había quien te sacara de tu felicidad cuando hablabas de nosotros.<br><br>Me dejas con un vacío enorme, pero con el corazón lleno. Sé que no hay forma de darte otro beso, pero sé que puedo honrarte cada día, cada mañana. Sé que estarás con nosotros y con nuestras familias en las buenas y en las malas — tú no eres de los que nos dejarían nunca. Me duele inmensamente no tenerte aquí, pero saber que estás descansando me da tranquilidad, la aceptación de que ya nada te molesta.<br><br>Los sueños que teníamos los honraré. El amor que nos inculcaste como familia — estar el uno para el otro, con tu sonrisa, con tu disponibilidad — saber que siempre estabas ahí para mí, para nosotros, sin excusas, sin nada más que amor.<br><br>Tu vida, tu historia, son los que te definen: tus hijos, tu amada esposa, la gran familia que tú creaste. Eres un ejemplo de cómo salir adelante. Y hoy, papá, quiero decirte que estoy orgulloso de ti. Estoy feliz de ser llamado tu hijo, de ser un De Paz. Descansa, mi rey, y estate seguro de que nunca te olvidaremos — en una oración, en una sonrisa, y de tanto en tanto, ¿por qué no?, llorar y hablar contigo, porque es imposible no extrañarte.<br><br>Estuviste para mí en los momentos más difíciles y en los más hermosos: cuando estuve enfermo, cuando mamá enfermó, cuando te conté que había conocido a la mujer que sería mi esposa, cuando te dije de mi primer trabajo, cuando te dije que sería papá, y cuando te dije que nuestro pequeño Leonardo — nuestro hijo — había nacido. Y así seguiré haciéndolo, siempre pensando en ti y en mamita.<br><br>Nunca nos incomodaste. Siempre nos amaste, y siempre lo haremos.<br><br>Descansa, mi papito. Te amo.</p></div></div>
+  <div data-l="de"><div class="eulogy-block"><div class="eul-name">Emilio De Paz Castillo</div><p class="eul-text">Mein geliebter Papito,<br><br>Ich möchte, dass du weißt, dass du mein bester Freund bist und es immer bleiben wirst. Ich glaube, dass der größte Traum eines Sohnes darin besteht, seinen Vater als Vorbild zu haben, als Kompass, der den Weg weist.<br><br>Durch dich mache ich so viele Witze, habe ich einen so neugierigen Geist, so viel Vorstellungskraft, so viel Liebe. Ich weiß, dass du immer stolz auf mich und meine Geschwister warst, auf unsere Partner, auf deine Enkelkinder — niemand konnte dich aus deiner Freude herausbringen, wenn du von uns sprachst.<br><br>Du hinterließt mir eine riesige Leere, aber ein volles Herz. Ich weiß, dass es keinen Weg gibt, dir noch einen Kuss zu geben, aber ich weiß, dass ich dich jeden Tag, jeden Morgen ehren kann. Ich weiß, dass du bei uns und unseren Familien in guten wie in schlechten Zeiten sein wirst — du bist nicht der Typ, der uns je verlassen würde. Es schmerzt mich unermesslich, dich nicht hier zu haben, aber zu wissen, dass du ruhst, gibt mir Frieden und die Gewissheit, dass dich nichts mehr quält.<br><br>Die Träume, die wir hatten, werde ich ehren. Die Liebe, die du uns als Familie eingeflößt hast — füreinander da zu sein, mit deinem Lächeln, mit deiner Verfügbarkeit — zu wissen, dass du immer für mich, für uns da warst, ohne Ausreden, mit nichts anderem als Liebe.<br><br>Dein Leben, deine Geschichte, das ist es, was dich ausmacht: deine Kinder, deine geliebte Frau, die große Familie, die du geschaffen hast. Du bist ein Beispiel dafür, wie man vorwärtskommt. Und heute, Papa, möchte ich dir sagen, dass ich stolz auf dich bin. Ich bin glücklich, dein Sohn genannt zu werden, ein De Paz zu sein. Ruh dich aus, mein König, und sei sicher, dass wir dich niemals vergessen werden — in einem Gebet, in einem Lächeln, und hin und wieder, warum nicht, weinen und mit dir sprechen, denn es ist unmöglich, dich nicht zu vermissen.<br><br>Du warst für mich in den schwierigsten und in den schönsten Momenten da: als ich krank war, als Mama krank wurde, als ich dir erzählte, dass ich die Frau kennengelernt hatte, die meine Frau werden würde, als ich dir von meiner ersten Arbeit erzählte, als ich dir sagte, dass ich Vater werden würde, und als ich dir sagte, dass unser kleiner Leonardo — unser Sohn — geboren worden war. Und so werde ich es weiterhin tun, immer an dich und an Mamita denkend.<br><br>Du hast uns nie zur Last gefallen. Du hast uns immer geliebt, und wir werden es immer tun.<br><br>Ruh dich aus, mein Papito. Ich liebe dich.</p></div></div>
+  <div data-l="en"><div class="eulogy-block"><div class="eul-name">Emilio De Paz Castillo</div><p class="eul-text">My beloved Papito,<br><br>I want you to know that you are and will always be my best friend. I believe the greatest dream a son can have is to have his father as an example, as a compass that guides his destiny.<br><br>It is because of you that I tell so many jokes, that I have such a curious mind, with so much imagination, with so much love. I know you were always proud of me and my siblings, of our partners, of your grandchildren — no one could take you away from your happiness when you spoke of us.<br><br>You leave me with an enormous void, but with a full heart. I know there is no way to give you another kiss, but I know I can honour you every day, every morning. I know you will be with us and our families in good times and in bad — you are not the kind to ever leave us. It hurts me immensely not to have you here, but knowing you are resting gives me peace, the acceptance that nothing troubles you anymore.<br><br>The dreams we had I will honour. The love you instilled in us as a family — to be there for one another, with your smile, with your availability — knowing you were always there for me, for us, without excuses, with nothing but love.<br><br>Your life, your story, that is what defines you: your children, your beloved wife, the great family you created. You are an example of how to move forward. And today, Papa, I want to tell you that I am proud of you. I am happy to be called your son, to be a De Paz. Rest, my king, and be certain we will never forget you — in a prayer, in a smile, and every now and then, why not, cry and talk to you, because it is impossible not to miss you.<br><br>You were there for me in the most difficult and the most beautiful moments: when I was ill, when Mama fell ill, when I told you I had met the woman who would be my wife, when I told you about my first job, when I told you I was going to be a father, and when I told you that our little Leonardo — our son — had been born. And I will continue to do so, always thinking of you and of Mamita.<br><br>You never burdened us. You always loved us, and we always will.<br><br>Rest, my Papito. I love you.</p></div></div>
+  <div data-l="uk"><div class="eulogy-block"><div class="eul-name">Emilio De Paz Castillo</div><p class="eul-text">Мій коханий Папіто,<br><br>Хочу, щоб ти знав, що ти є і завжди будеш моїм найкращим другом. Я вірю, що найбільша мрія сина — мати батька як приклад, як компас, що вказує дорогу в житті.<br><br>Завдяки тобі я так часто жартую, маю такий допитливий розум, стільки уяви, стільки любові. Я знаю, що ти завжди пишався мною і моїми братом та сестрою, нашими партнерами, своїми онуками — ніщо не могло позбавити тебе радості, коли ти говорив про нас.<br><br>Ти залишаєш мені величезну порожнечу, але з повним серцем. Я знаю, що немає способу поцілувати тебе ще раз, але я знаю, що можу вшановувати тебе кожен день, кожного ранку. Знаю, що ти будеш з нами і з нашими родинами в радості й у горі — ти не з тих, хто нас покине. Мені безмірно боляче, що тебе немає поруч, але знання того, що ти спочиваєш, дає мені спокій і прийняття того, що тебе вже ніщо не турбує.<br><br>Мрії, які ми мали разом, я збережу. Любов, яку ти вклав у нас як родину — бути одне для одного, з твоєю посмішкою, з твоєю готовністю допомогти — знання того, що ти завжди був там для мене, для нас, без відмовок, лише з любов'ю.<br><br>Твоє життя, твоя історія — ось що тебе визначає: твої діти, твоя кохана дружина, велика родина, яку ти створив. Ти є прикладом того, як рухатися вперед. І сьогодні, тату, я хочу сказати тобі, що пишаюся тобою. Я щасливий, що мене називають твоїм сином, що я — Де Пас. Відпочивай, мій королю, і будь певний, що ми ніколи тебе не забудемо — в молитві, в усмішці, а інколи, чому ні, плакати й розмовляти з тобою, бо неможливо не сумувати за тобою.<br><br>Ти був поруч зі мною в найважчі і в найпрекрасніші моменти: коли я хворів, коли захворіла мама, коли я розповів тобі, що зустрів жінку, яка стане моєю дружиною, коли я розповів про першу роботу, коли сказав, що стану батьком, і коли повідомив, що наш маленький Леонардо — наш син — народився. І так я продовжуватиму, завжди думаючи про тебе і про Маміту.<br><br>Ти ніколи нас не обтяжував. Ти завжди любив нас, і ми завжди будемо любити тебе.<br><br>Відпочивай, мій Папіто. Я тебе люблю.</p></div></div>
+</div></div>
+
+<!-- Eulogia Rosa -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-eul" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Palabras de Rosa</div>
+    <div data-l="de" class="item-title">Worte von Rosa</div>
+    <div data-l="en" class="item-title">Words from Rosa</div>
+    <div data-l="uk" class="item-title">Слова Рози</div>
+    <div data-l="es" class="item-sub">Hija</div>
+    <div data-l="de" class="item-sub">Tochter</div>
+    <div data-l="en" class="item-sub">Daughter</div>
+    <div data-l="uk" class="item-sub">Донька</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><div class="eulogy-block"><div class="eul-name">Rosa De Paz Castillo</div><p class="eul-text">En cada momento de mi vida, siempre tuve de mi papá una palabra de impulso y de confianza en mí misma. Nadie es perfecto, es cierto, eso lo supimos siempre y él también lo sabía. Pero mi papá siempre me motivaba. Él fue quien me enseñó a ser autodidacta; me enseñó a decir: "Mira, yo he aprendido viendo". Y así era como yo aprendía de él.<br><br>Desde chiquita, yo era quien lo ayudaba cuando hacía alguna reparación, pasándole sus herramientas. Lo seguía muchísimo porque lo miraba y, para mí, él era mi "súper papá". Nadie podría contra él; era capaz de hacer todo lo que nadie más pudiese hacer. Siempre fue una persona muy admirable y siempre estuve muy orgullosa de decirle a todo el mundo a quiénes admiraba más en la vida: a mi mamá —profesora de la Universidad Nacional Mayor de San Marcos— y a mi papá, el ingeniero civil honesto, respetable, con mucha fuerza y valentía.<br><br>La historia de mi papá es la de un hombre que salió de un pueblo pequeño porque no estaba conforme con ser como los demás; él quería algo mejor, y obviamente quería algo mejor para nosotros. Él nos motivó a eso.<br><br>Yo llegué a Alemania porque mi amiga Raquel estaba aquí justo en el tiempo en que conocí a Frankie. Recuerdo que estábamos en el carro, porque mi papá era de aquellos papás que me llevaba al trabajo cuando coincidíamos en el horario. Y fue ahí, en el carro, donde me dijo: "Mira, Rosi, ¿tú quieres ir? ¿Tienes el dinero? Tú eres joven. Si tienes el dinero y el tiempo, anda. ¿Qué vas a perder? No vas a perder nada. Eres joven, tienes que ir a descubrir el mundo, tú puedes hacerlo".<br><br>Sus palabras fueron las que me confirmaron que podía. Esa pequeña duda que yo tenía en la cabeza desapareció porque él me motivó. Le respeté siempre y consideré mucho su forma de opinar y de ver las cosas.<br><br>Lo voy a extrañar para siempre. Le pido perdón por no haber sido la mejor hija del mundo. Pude haber dado más, pude haberlo tratado mejor... pero lo intenté con todo mi corazón. Y ese es el recuerdo que me queda: haberlo visto, haberlo encontrado, haberlo abrigado y acariciado en el momento en que él estaba frío, dándole masajitos en sus piecitos.<br><br>Me has dado la oportunidad de vivir una última aventura contigo trayéndote a mi lado. Te amo, papá, y te voy a extrañar por siempre, pero sé que ya debes de estar tranquilo. Descansa en paz, papito lindo. Te amaré siempre.</p></div></div>
+  <div data-l="de"><div class="eulogy-block"><div class="eul-name">Rosa De Paz Castillo</div><p class="eul-text">In jedem Moment meines Lebens hatte ich von meinem Papa ein Wort des Antriebs und des Vertrauens in mich selbst. Niemand ist perfekt, das wussten wir immer, und er wusste es auch. Aber mein Papa hat mich immer motiviert. Er war derjenige, der mir beibrachte, autodidaktisch zu sein; er lehrte mich zu sagen: „Schau, ich habe durch Beobachten gelernt." Und so lernte ich von ihm.<br><br>Von klein auf war ich diejenige, die ihm half, wenn er eine Reparatur durchführte, und ihm seine Werkzeuge reichte. Ich folgte ihm sehr oft, weil er für mich mein „Super-Papa" war. Niemand konnte gegen ihn ankommen; er war fähig, alles zu tun, was sonst niemand konnte. Ich war immer sehr stolz darauf, aller Welt zu sagen, wen ich im Leben am meisten bewunderte: meine Mama — Professorin an der Universidad Nacional Mayor de San Marcos — und meinen Papa, den ehrlichen, respektablen Bauingenieur mit so viel Stärke und Mut.<br><br>Die Geschichte meines Papas ist die eines Mannes, der ein kleines Dorf verließ, weil er sich nicht damit abfinden wollte, wie alle anderen zu sein; er wollte etwas Besseres für uns. Und er hat uns dazu motiviert.<br><br>Ich kam nach Deutschland, weil meine Freundin Raquel genau zu der Zeit hier war, als ich Frankie kennenlernte. Ich erinnere mich, dass wir im Auto saßen — mein Papa war einer jener Väter, die mich zur Arbeit fuhren. Und es war dort, im Auto, wo er mir sagte: „Schau, Rosi, willst du gehen? Hast du das Geld? Du bist jung. Wenn du das Geld und die Zeit hast, geh. Was wirst du verlieren? Du wirst nichts verlieren. Du musst die Welt entdecken, du kannst das."<br><br>Seine Worte bestätigten mir, dass ich es konnte. Dieser kleine Zweifel in meinem Kopf verschwand, weil er mich motivierte. Ich habe ihn immer respektiert und seine Art zu denken und die Dinge zu sehen sehr geschätzt.<br><br>Ich werde ihn für immer vermissen. Ich bitte ihn um Vergebung, nicht die beste Tochter gewesen zu sein. Ich hätte mehr geben können, ich hätte ihn besser behandeln können... aber ich habe es mit ganzem Herzen versucht. Und das ist die Erinnerung, die mir bleibt: ihn gesehen zu haben, ihn gehalten und gestreichelt zu haben, als er kalt war, ihm kleine Massagen an seinen Füßchen zu geben.<br><br>Du hast mir die Möglichkeit gegeben, ein letztes Abenteuer mit dir zu erleben. Ich liebe dich, Papa, und ich werde dich für immer vermissen, aber ich weiß, dass du jetzt ruhig bist. Ruh in Frieden, mein liebes Papito. Ich werde dich immer lieben.</p></div></div>
+  <div data-l="en"><div class="eulogy-block"><div class="eul-name">Rosa De Paz Castillo</div><p class="eul-text">In every moment of my life, my dad always had a word of encouragement and confidence for me. Nobody is perfect — we always knew that, and he knew it too. But my dad always motivated me. He was the one who taught me to be self-taught; he taught me to say: "Look, I learned by watching." And that is how I learned from him.<br><br>From a young age, I was the one who helped him when he did repairs, handing him his tools. I followed him everywhere because, to me, he was my "super dad." Nobody could stand against him; he was capable of doing everything no one else could. I was always very proud to tell everyone who I admired most in life: my mum — a professor at the Universidad Nacional Mayor de San Marcos — and my dad, the honest, respectable civil engineer with so much strength and courage.<br><br>My dad's story is that of a man who left a small town because he was not content to be like everyone else; he wanted something better for us. And he motivated us to do the same.<br><br>I came to Germany because my friend Raquel was here at exactly the time I met Frankie. I remember we were in the car — my dad was one of those fathers who drove me to work when our schedules matched. And it was there, in the car, where he said to me: "Look, Rosi, do you want to go? Do you have the money? You're young. If you have the money and the time, go. What are you going to lose? Nothing. You have to go and discover the world — you can do it."<br><br>His words confirmed to me that I could. That small doubt I had disappeared because he motivated me. I always respected him and greatly valued his way of thinking and seeing things.<br><br>I will miss him forever. I ask his forgiveness for not having been the best daughter in the world. I could have given more, I could have treated him better... but I tried with all my heart. And that is the memory I carry: having seen him, having held and caressed him when he was cold, giving him little massages on his feet.<br><br>You gave me the opportunity to live one last adventure with you. I love you, Dad, and I will miss you forever, but I know you must be at peace now. Rest in peace, my dear Papito. I will love you always.</p></div></div>
+  <div data-l="uk"><div class="eulogy-block"><div class="eul-name">Rosa De Paz Castillo</div><p class="eul-text">У кожну мить мого життя мій тато завжди мав для мене слово підтримки і впевненості в собі. Ніхто не є досконалим — ми завжди це знали, і він теж знав. Але мій тато завжди мотивував мене. Саме він навчив мене бути самоучкою; він навчив мене казати: «Дивись, я навчилась, спостерігаючи.» І так я вчилась у нього.<br><br>Змалку я допомагала йому, коли він щось ремонтував, подаючи інструменти. Я скрізь ходила за ним, бо для мене він був моїм «супер-татом». Ніхто не міг з ним зрівнятись; він умів робити все те, чого не міг зробити ніхто інший. Я завжди пишалась тим, що казала всім, кого найбільше захоплювалась у житті: моя мама — професор університету Сан-Маркос — і мій тато, чесний, поважний інженер-будівельник із такою силою і мужністю.<br><br>Історія мого тата — це історія чоловіка, який залишив маленьке містечко, бо не хотів бути таким як усі; він хотів кращого для нас. І він нас мотивував до цього.<br><br>Я приїхала до Німеччини, бо моя подруга Ракель була тут саме тоді, коли я познайомилась із Франкі. Пам'ятаю, ми були в машині — тато був одним із тих батьків, що відвозили мене на роботу. І саме там він сказав мені: «Дивись, Росі, ти хочеш поїхати? У тебе є гроші? Ти молода. Якщо є гроші і час — їдь. Що ти втратиш? Нічого. Ти маєш відкривати світ, ти можеш це зробити.»<br><br>Його слова підтвердили мені, що я можу. Той невеликий сумнів зник, бо він мотивував мене. Я завжди поважала його і дуже цінувала його спосіб думати і бачити речі.<br><br>Я буду скучати за ним вічно. Прошу у нього пробачення за те, що не була найкращою донькою. Я могла дати більше, могла ставитись до нього краще... але я намагалась від усього серця. І це спогад, який залишається зі мною: обіймала і пестила його, коли йому було холодно, робила маленький масаж його ніжкам.<br><br>Ти дав мені можливість пережити останню пригоду разом із тобою. Люблю тебе, тату, і буду скучати вічно, але знаю, що тепер ти спокійний. Спочивай з миром, мій любий Папіто. Я буду любити тебе завжди.</p></div></div>
+</div></div>
+
+<!-- Eulogia Carlos -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-eul" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Palabras de Carlos</div>
+    <div data-l="de" class="item-title">Worte von Carlos</div>
+    <div data-l="en" class="item-title">Words from Carlos</div>
+    <div data-l="uk" class="item-title">Слова Карлоса</div>
+    <div data-l="es" class="item-sub">Hijo</div>
+    <div data-l="de" class="item-sub">Sohn</div>
+    <div data-l="en" class="item-sub">Son</div>
+    <div data-l="uk" class="item-sub">Син</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><div class="eulogy-block"><div class="eul-name">Carlos De Paz Castillo</div><p class="eul-text">Querido Papito lindo, quienes te amamos nos encontramos aquí para honrar tu memoria.<br><br>Aunque habitarás siempre en nuestros corazones, aunque habites allí con tu amada Nelly, nos duele profundamente la ausencia de tu cariñoso tacto, tu traviesa voz, tu mirada inocentemente triste, tu imaginación lúdica y tus discursos infinitos.<br><br>Y para honrar quién fuiste, quiero recordar de dónde viniste. Tu infancia tuvo aristas duras y cortantes. Entre maltratos, abusos y desamor, desarrollaste tu ingenioso humor e hiciste de tu profesión tu salvación.<br><br>Por suerte, el amor se hizo presente en tu vida. Y el amor te movió a trascender tus aristas, el amor te transformó, el amor de Nelly y de tus hijos te liberó.<br><br>Y esa vida que el amor liberó sigue dando frutos. Nos habría encantado darte la noticia de que serás abuelo de una niña De Paz. Rio desearía ver el asombro en tu rostro para contarte que está contentísimo de que va a convertirse en un orgulloso hermano mayor. Laura desearía poder verte saltar de alegría con tus ojos tiernos. Yo desearía poder abrazarte y recibir un beso tuyo.<br><br>Hoy, en tu ausencia, quiero creer que uno no solo está aquí o allá, sino que uno verdaderamente está donde se le piensa, donde se le siente, donde se le ama. Y tú estás presente siempre en nuestros corazones.<br><br>Te llevaremos con nosotros al nacimiento de nuestra hija, al primer día de colegio de Rio, a aniversarios de bodas, cumpleaños y en todos los hitos por venir, pero sobre todo en lo cotidiano, entre momentos, cuando una felicidad o una tristeza pida tu nombre.<br><br>Papito lindo, tú estás y estarás siempre en nosotros. Te amamos.</p></div></div>
+  <div data-l="de"><div class="eulogy-block"><div class="eul-name">Carlos De Paz Castillo</div><p class="eul-text">Mein lieber Papito,<br><br>Wir, die dich lieben, sind hier zusammengekommen, um dein Andenken zu ehren.<br><br>Obwohl du immer in unseren Herzen wohnen wirst, obwohl du dort bei deiner geliebten Nelly bist, schmerzt uns zutiefst die Abwesenheit deiner liebevollen Berührung, deiner schelmischen Stimme, deines unschuldig traurigen Blicks, deiner spielerischen Phantasie und deiner endlosen Reden.<br><br>Und um zu ehren, wer du warst, möchte ich daran erinnern, woher du kamst. Deine Kindheit hatte harte und scharfe Kanten. Zwischen Misshandlungen, Missbrauch und Lieblosigkeit entwickeltest du deinen einfallsreichen Humor und machtest aus deinem Beruf deine Rettung.<br><br>Zum Glück trat die Liebe in dein Leben. Und die Liebe bewegte dich dazu, deine Kanten zu überwinden, die Liebe verwandelte dich — die Liebe von Nelly und deinen Kindern befreite dich.<br><br>Und dieses Leben, das die Liebe befreite, trägt weiter Früchte. Wir hätten dir so gerne die Nachricht gegeben, dass du Großvater eines Mädchens namens De Paz wirst. Rio würde gerne das Staunen in deinen Augen sehen, wenn er dir erzählt, wie glücklich er ist, bald ein stolzer großer Bruder zu werden. Laura würde dich gerne vor Freude aufspringen sehen, mit deinen zärtlichen Augen. Ich würde dich so gerne umarmen und einen Kuss von dir empfangen.<br><br>Heute, in deiner Abwesenheit, möchte ich glauben, dass man nicht nur hier oder dort ist, sondern dass man wirklich dort ist, wo man gedacht, gefühlt und geliebt wird. Und du bist immer in unseren Herzen gegenwärtig.<br><br>Wir werden dich zur Geburt unserer Tochter mitnehmen, zum ersten Schultag von Rio, zu Hochzeitstagen, Geburtstagen und all den kommenden Meilensteinen — aber vor allem im Alltag, in den Zwischenmomenten, wenn ein Glück oder eine Traurigkeit nach deinem Namen verlangt.<br><br>Papito lindo, du bist und wirst immer in uns sein. Wir lieben dich.</p></div></div>
+  <div data-l="en"><div class="eulogy-block"><div class="eul-name">Carlos De Paz Castillo</div><p class="eul-text">Dear Papito lindo,<br><br>Those of us who love you are gathered here to honour your memory.<br><br>Although you will always live in our hearts, although you are there with your beloved Nelly, we are deeply pained by the absence of your loving touch, your mischievous voice, your innocently sad gaze, your playful imagination and your endless speeches.<br><br>And to honour who you were, I want to remember where you came from. Your childhood had hard and sharp edges. Between mistreatment, abuse and a lack of love, you developed your ingenious humour and made your profession your salvation.<br><br>Fortunately, love made its way into your life. And love moved you to transcend your edges, love transformed you — the love of Nelly and your children set you free.<br><br>And that life that love freed continues to bear fruit. We would have loved to give you the news that you are going to be the grandfather of a little girl named De Paz. Rio would love to see the astonishment on your face when he tells you how thrilled he is to become a proud big brother. Laura would love to see you leap for joy with your tender eyes. I would love to hug you and receive a kiss from you.<br><br>Today, in your absence, I want to believe that one is not simply here or there, but that one truly exists where one is thought of, felt, and loved. And you are always present in our hearts.<br><br>We will carry you with us to the birth of our daughter, to Rio's first day of school, to wedding anniversaries, birthdays and every milestone to come — but above all in the everyday, between moments, when a happiness or a sadness calls out your name.<br><br>Papito lindo, you are and will always be within us. We love you.</p></div></div>
+  <div data-l="uk"><div class="eulogy-block"><div class="eul-name">Carlos De Paz Castillo</div><p class="eul-text">Дорогий Папіто лінdo,<br><br>Ми, ті, хто тебе любить, зібрались тут, щоб вшанувати твою пам'ять.<br><br>Хоча ти завжди житимеш у наших серцях, хоча ти там зі своєю коханою Неллі, нам глибоко боляче від відсутності твого ніжного дотику, твого пустотливого голосу, твого невинно сумного погляду, твоєї грайливої уяви і твоїх нескінченних промов.<br><br>І щоб вшанувати того, ким ти був, я хочу згадати, звідки ти прийшов. Твоє дитинство мало гострі і ріжучі грані. Між жорстоким поводженням, образами і нелюбов'ю ти розвинув свій кмітливий гумор і зробив свою професію своїм порятунком.<br><br>На щастя, любов увійшла у твоє життя. І любов спонукала тебе подолати свої грані, любов перетворила тебе — любов Неллі і твоїх дітей звільнила тебе.<br><br>І те життя, яке звільнила любов, продовжує давати плоди. Нам так хотілось би повідомити тобі, що ти станеш дідусем дівчинки Де Пас. Ріо хотів би побачити подив на твоєму обличчі, розповідаючи тобі, як він радіє тому, що стане гордим старшим братом. Лаура хотіла б бачити, як ти підстрибуєш від радості своїми ніжними очима. Я хотів би обійняти тебе і отримати від тебе поцілунок.<br><br>Сьогодні, у твою відсутність, я хочу вірити, що людина перебуває не просто тут або там, а справді там, де про неї думають, де її відчувають, де її люблять. І ти завжди присутній у наших серцях.<br><br>Ми візьмемо тебе з собою на народження нашої доньки, на перший день школи Ріо, на річниці весілля, дні народження і всі майбутні важливі моменти — але передусім у повсякденному житті, між миттями, коли якась радість чи сум покличе твоє ім'я.<br><br>Папіто лінdo, ти є і завжди будеш у нас. Ми тебе любимо.</p></div></div>
+</div></div>
+
+<!-- TERCER PARTE IGLESIA -->
+<div class="section-label" data-l="es">Tercer parte &mdash; Iglesia · cierre litúrgico</div>
+<div class="section-label" data-l="de">Dritter Teil &mdash; Kirche · liturgischer Abschluss</div>
+<div class="section-label" data-l="en">Third part &mdash; Church · liturgical close</div>
+<div class="section-label" data-l="uk">Третя частина &mdash; Церква · літургійне завершення</div>
+
+<!-- Orgelmusik der Kirche -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-lit" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Música litúrgica · órgano de la iglesia</div>
+    <div data-l="de" class="item-title">Orgelmusik der Kirche</div>
+    <div data-l="en" class="item-title">Church organ music</div>
+    <div data-l="uk" class="item-title">Церковний орган</div>
+    <div data-l="es" class="item-sub">Cuando Quieras Donde Quieras · Dyango</div>
+    <div data-l="de" class="item-sub">Cuando Quieras Donde Quieras · Dyango</div>
+    <div data-l="en" class="item-sub">Cuando Quieras Donde Quieras · Dyango</div>
+    <div data-l="uk" class="item-sub">Cuando Quieras Donde Quieras · Dyango</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><p class="note">Canción de papá · Dyango · Speaker Bluetooth.</p><br><a href="https://www.letras.com/dyango/846736/" target="_blank">Ver letra completa →</a></div>
+  <div data-l="de"><p class="note">Papas Lied · Dyango · Bluetooth-Lautsprecher.</p><br><a href="https://www.letras.com/dyango/846736/" target="_blank">Liedtext ansehen →</a></div>
+  <div data-l="en"><p class="note">Dad's song · Dyango · Bluetooth speaker.</p><br><a href="https://www.letras.com/dyango/846736/" target="_blank">View full lyrics →</a></div>
+  <div data-l="uk"><p class="note">Пісня тата · Dyango · Bluetooth-колонка.</p><br><a href="https://www.letras.com/dyango/846736/" target="_blank">Переглянути текст →</a></div>
+</div></div>
+
+<!-- Orgelmusik der Kirche -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-lit" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Música litúrgica · órgano de la iglesia</div>
+    <div data-l="de" class="item-title">Orgelmusik der Kirche</div>
+    <div data-l="en" class="item-title">Church organ music</div>
+    <div data-l="uk" class="item-title">Церковний орган</div>
+    <div data-l="es" class="item-sub">Lied auf Deutsch</div>
+    <div data-l="de" class="item-sub">Lied auf Deutsch</div>
+    <div data-l="en" class="item-sub">Song in German</div>
+    <div data-l="uk" class="item-sub">Пісня німецькою</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><p class="note">Canto litúrgico en alemán — a cargo del órgano de la iglesia, no del speaker.</p></div>
+  <div data-l="de"><p class="note">Kirchenlied auf Deutsch — gespielt von der Kirchenorgel, nicht vom Lautsprecher.</p></div>
+  <div data-l="en"><p class="note">Liturgical song in German — played by the church organ, not the speaker.</p></div>
+  <div data-l="uk"><p class="note">Літургійна пісня німецькою — виконується на церковному органі, не через колонку.</p></div>
+</div></div>
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-move" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Eucaristía</div>
+    <div data-l="de" class="item-title">Eucharistie</div>
+    <div data-l="en" class="item-title">Eucharist</div>
+    <div data-l="uk" class="item-title">Євхаристія</div>
+    <div data-l="es" class="item-sub">Padre celebrante</div>
+    <div data-l="de" class="item-sub">Pfarrer</div>
+    <div data-l="en" class="item-sub">Priest</div>
+    <div data-l="uk" class="item-sub">Священик</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><p class="note">Celebración eucarística a cargo del padre.</p></div>
+  <div data-l="de"><p class="note">Eucharistiefeier durch den Pfarrer.</p></div>
+  <div data-l="en"><p class="note">Eucharistic celebration led by the priest.</p></div>
+  <div data-l="uk"><p class="note">Євхаристійна літургія під проводом священика.</p></div>
+</div></div>
+
+<!-- Palabras finales -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-move" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Palabras finales del padre</div>
+    <div data-l="de" class="item-title">Abschließende Gedanken des Pfarrers</div>
+    <div data-l="en" class="item-title">Closing words — priest</div>
+    <div data-l="uk" class="item-title">Заключне слово священика</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><p class="note">Reflexión final y oración de cierre antes del traslado al cementerio.</p></div>
+  <div data-l="de"><p class="note">Abschließende Gedanken und Gebet vor dem Gang zum Friedhof.</p></div>
+  <div data-l="en"><p class="note">Final reflection and closing prayer before moving to the cemetery.</p></div>
+  <div data-l="uk"><p class="note">Заключна молитва перед переходом на кладовище.</p></div>
+</div></div>
+
+<!-- CUARTO PARTE CEMENTERIO -->
+<div class="section-label" data-l="es">Cuarto parte &mdash; Cementerio · 14:00 h</div>
+<div class="section-label" data-l="de">Vierter Teil &mdash; Friedhof · 14:00 Uhr</div>
+<div class="section-label" data-l="en">Fourth part &mdash; Cemetery · 14:00</div>
+<div class="section-label" data-l="uk">Четверта частина &mdash; Цвинтар · 14:00</div>
+
+<!-- Traslado -->
+<div class="item"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-move" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Traslado al cementerio</div>
+    <div data-l="de" class="item-title">Gang zum Friedhof Heimstetten</div>
+    <div data-l="en" class="item-title">Move to Friedhof Heimstetten</div>
+    <div data-l="uk" class="item-title">Перехід на кладовище Гаймштеттен</div>
+    <div data-l="es" class="item-sub">Gräberfeld 9, Reihe 1, Nr. 11</div>
+    <div data-l="de" class="item-sub">Gräberfeld 9, Reihe 1, Nr. 11</div>
+    <div data-l="en" class="item-sub">Gräberfeld 9, Reihe 1, Nr. 11</div>
+    <div data-l="uk" class="item-sub">Gräberfeld 9, Reihe 1, Nr. 11</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><p class="note">Sepultura de las cenizas junto a mamá Nelly. Palabras finales del padre celebrante.</p></div>
+  <div data-l="de"><p class="note">Urnenbeisetzung neben Nelly. Abschlussworte des Priesters am Grab.</p></div>
+  <div data-l="en"><p class="note">Interment of the ashes beside Nelly. Closing words from the priest at the graveside.</p></div>
+  <div data-l="uk"><p class="note">Поховання праху поруч із Неллі. Заключні слова священика біля могили.</p></div>
+</div></div>
+
+<!-- Canción cierre -->
+<div class="item" style="border-bottom:none"><div class="item-head" onclick="tog(this)">
+  <div class="bullet"><span class="dot d-song" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;display:block"></span></div>
+  <div class="meta">
+    <div data-l="es" class="item-title">Canción de cierre</div>
+    <div data-l="de" class="item-title">Abschlusslied</div>
+    <div data-l="en" class="item-title">Closing song</div>
+    <div data-l="uk" class="item-title">Завершальна пісня</div>
+    <div data-l="es" class="item-sub">Clavelitos · Joselito</div>
+    <div data-l="de" class="item-sub">Clavelitos · Joselito</div>
+    <div data-l="en" class="item-sub">Clavelitos · Joselito</div>
+    <div data-l="uk" class="item-sub">Clavelitos · Joselito</div>
+  </div><span class="ch">&#8964;</span>
+</div><div class="item-body">
+  <div data-l="es"><p class="note">Canción de papá · Joselito · Speaker Bluetooth.</p><br><a href="https://www.letras.com/joselito/1236107/" target="_blank">Ver letra completa →</a></div>
+  <div data-l="de"><p class="note">Papas Lied · Joselito · Bluetooth-Lautsprecher.</p><br><a href="https://www.letras.com/joselito/1236107/" target="_blank">Liedtext ansehen →</a></div>
+  <div data-l="en"><p class="note">Dad's song · Joselito · Bluetooth speaker.</p><br><a href="https://www.letras.com/joselito/1236107/" target="_blank">View full lyrics →</a></div>
+  <div data-l="uk"><p class="note">Пісня тата · Joselito · Bluetooth-колонка.</p><br><a href="https://www.letras.com/joselito/1236107/" target="_blank">Переглянути текст →</a></div>
+</div></div>
+
+<script>
+function sl(l) {
+  document.body.setAttribute('data-lang', l);
+  document.querySelectorAll('.lb').forEach(function(b) { b.classList.remove('on'); });
+  document.querySelectorAll('.lb').forEach(function(b) {
+    if (b.getAttribute('onclick').indexOf("'"+l+"'") !== -1) b.classList.add('on');
+  });
+}
+function tog(h) {
+  var b = h.nextElementSibling;
+  var o = b.classList.contains('op');
+  b.classList.toggle('op', !o);
+  h.querySelector('.ch').classList.toggle('op', !o);
+}
+</script>
+</body>
+</html>
